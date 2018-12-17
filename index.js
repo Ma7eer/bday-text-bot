@@ -1,7 +1,9 @@
 const express = require('express')
 const cron = require('node-cron')
 const Nexmo = require('nexmo')
-require('dotenv').config()
+if (process.env.NODE_ENV == 'development') {
+  require('dotenv').config()
+}
 
 // initialize express
 const app = express()
