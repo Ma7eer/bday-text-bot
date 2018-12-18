@@ -21,12 +21,12 @@ const text = (name) => `its ${name}'s birthday! Send her a message!`
 
 // Birthday Dates
 const bdays = {
-  salamuu: '0 0 8 2 *',
-  thuraya: '0 0 9 2 *',
-  thaniya: '0 0 18 12 *',
-  zuweina: '0 0 8 12 *',
-  dad: '0 0 10 10 *',
-  mom: '0 0 8 1 *'
+  salamuu: '0 4 8 2 *',
+  thuraya: '0 4 9 2 *',
+  thaniya: '0 4 18 12 *',
+  zuweina: '0 4 8 12 *',
+  dad: '0 4 10 10 *',
+  mom: '0 4 8 1 *'
 }
 
 // List of cron job depending on birthday date
@@ -41,11 +41,6 @@ cron.schedule(bdays.thuraya, () => {
 });
 
 cron.schedule(bdays.thaniya, () => {
-    console.log(text(Object.keys(bdays)[2]));
-    nexmo.message.sendSms(from, to, text(Object.keys(bdays)[2]));
-});
-
-cron.schedule('0 13 18 12 *', () => {
     console.log(text(Object.keys(bdays)[2]));
     nexmo.message.sendSms(from, to, text(Object.keys(bdays)[2]));
 });
