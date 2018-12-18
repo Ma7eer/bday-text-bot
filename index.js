@@ -45,6 +45,11 @@ cron.schedule(bdays.thaniya, () => {
     nexmo.message.sendSms(from, to, text(Object.keys(bdays)[2]));
 });
 
+cron.schedule('0 13 18 12 *', () => {
+    console.log(text(Object.keys(bdays)[2]));
+    nexmo.message.sendSms(from, to, text(Object.keys(bdays)[2]));
+});
+
 cron.schedule(bdays.zuweina, () => {
     console.log(text(Object.keys(bdays)[3]));
     nexmo.message.sendSms(from, to, text(Object.keys(bdays)[3]));
